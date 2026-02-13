@@ -1,0 +1,141 @@
+/* ===============================
+   SERVICES HERO
+================================ */
+
+.services-hero {
+  background: #0F172A;
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.services-hero h1 {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.services-hero p {
+  max-width: 700px;
+  margin: auto;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* SERVICE CARD IMAGE */
+
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* CARD CONTENT */
+
+.card-content {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* ===============================
+   SERVICES GRID
+================================ */
+
+.services {
+  padding: 80px 0;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.card h3 {
+  color: #2563EB;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+
+/* ===============================
+   PROCESS SECTION
+================================ */
+
+.process {
+  background: #F8FAFC;
+  padding: 80px 0;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.process-box {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border-left: 4px solid #2563EB;
+  transition: 0.3s;
+}
+
+.process-box h4 {
+  margin-bottom: 10px;
+  color: #0F172A;
+}
+
+.process-box p {
+  color: #475569;
+}
+
+.process-box:hover {
+  transform: translateY(-6px);
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .services-hero h1 {
+    font-size: 30px;
+  }
+
+  .services-hero p {
+    font-size: 15px;
+  }
+}

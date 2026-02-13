@@ -1,0 +1,265 @@
+/* ===============================
+   NAVBAR MAIN
+================================ */
+
+.navbar {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  overflow: visible; /* IMPORTANT FIX */
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===============================
+   LEFT SIDE - LOGO
+================================ */
+
+.nav-left {
+  width: 220px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.nav-left img {
+  height: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ===============================
+   RIGHT SIDE
+================================ */
+
+.nav-right {
+  flex: 1;
+  background: linear-gradient(90deg, #0B1D51, #132A78);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 60px;
+  position: relative;
+}
+
+/* DIAGONAL CUT (DESKTOP ONLY) */
+.nav-right::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background: #ffffff;
+  transform: skewX(-25deg);
+  z-index: 1;
+}
+
+/* ===============================
+   NAV LINKS
+================================ */
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  z-index: 2;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #FACC15;
+}
+
+/* underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0%;
+  height: 2px;
+  background: #FACC15;
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* ===============================
+   MOBILE MENU ICON
+================================ */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* CROSS ANIMATION */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ===============================
+   TABLET VIEW
+================================ */
+
+@media (max-width: 1024px) {
+
+  .nav-left {
+    width: 180px;
+  }
+
+  .nav-right {
+    padding-right: 30px;
+  }
+
+  .nav-links {
+    gap: 25px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+}
+
+/* ===============================
+   MOBILE VIEW
+================================ */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    height: 65px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-right: 15px;
+  }
+
+  /* remove diagonal cut */
+  .nav-right::before {
+    display: none;
+  }
+
+  .nav-right {
+    padding-right: 15px;
+  }
+
+  .nav-left {
+    width: 140px;
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
+
+  .nav-left img {
+    height: 100px;
+  }
+
+  /* MOBILE MENU */
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #ffffff;
+
+    gap: 15px;
+    padding: 0;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.35s ease;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    z-index: 1500;
+  }
+
+  .nav-links.active {
+    max-height: 400px;
+    padding: 20px 0;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 17px;
+    color: #0B1D51;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #132A78;
+  }
+}
+
+/* ===============================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    height: 60px;
+  }
+
+  .nav-links {
+    top: 60px;
+  }
+
+  .nav-left {
+    width: 120px;
+  }
+
+  .nav-left img {
+    height: 88px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+}
